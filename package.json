@@ -1,0 +1,78 @@
+{
+  "name": "template-vue2-webpack-umd",
+  "version": "1.0.0",
+  "templateName": "template-vue2-webpack-umd",
+  "templateVersion": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vue-cli-service build --target lib --filename index --formats umd,umd-min ./src/main.js",
+    "build:development": "vue-cli-service build --mode development --target lib --filename index --formats umd,umd-min ./src/main.js",
+    "serve": "vue-cli-service serve --open",
+    "dev": "npm run serve",
+    "lint": "vue-cli-service lint",
+    "lint:fix": "vue-cli-service lint --fix",
+    "prettier": "prettier -c --write plop-templates/**/*.js src/**/*.js src/**/*.vue",
+    "prepare": "husky install",
+    "log": "standard-changelog -f && git add CHANGELOG.md",
+    "commit": "commit"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.6.4",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-e2e-cypress": "^4.5.13",
+    "@vue/cli-plugin-eslint": "^4.5.13",
+    "@vue/cli-plugin-router": "^4.5.13",
+    "@vue/cli-plugin-unit-jest": "^4.5.13",
+    "@vue/cli-plugin-vuex": "^4.5.13",
+    "@vue/cli-service": "^4.5.13",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/test-utils": "^1.2.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "4.14.1",
+    "prettier": "^2.3.2",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.14",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/prompt-cli": "^12.1.4",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "add-asset-html-webpack-plugin": "^3.2.0",
+    "babel-plugin-import": "^1.13.3",
+    "vue-loader": "^16.3.0",
+    "@vue/compiler-sfc": "^3.1.4"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "npm run lint"
+  },
+  "engines": {
+    "node": ">=12.6.0 <=14.17.3"
+  }
+}
